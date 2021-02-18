@@ -7,3 +7,13 @@ Array.prototype.sort_in = function(fie,rev,pri) {
       }
       return this.sort(sort_by(fakeObj[0],fakeObj[1],fakeObj[2]))
 }
+function setEvent(queryName,boolean,event,callback) {
+   let element; 
+   const porm = new Promise((resolve,reject) => { 
+       if(boolean) element = document.querySelector(queryName);
+       else element = document.querySelectorAll(queryName);
+       for (let i = 0; i < element.length; i++){
+           element[i].addEventListener(event,callback);
+       }
+   });
+}
