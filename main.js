@@ -13,4 +13,14 @@ const inFo = [
  //nếu tham số thứ nhất là thuộc tính có giá trị khác number thì tham số thứ 2 co gia trị
  // false và tham số thứ 3 có giá trị là một function dạng như (a) => a.toUpperCase 
 // VD : 'name',false, (a) => a.toUpperCase()
-  
+
+
+let arr1 = [1,2,4,5,46,84,23,14,5235,8756,354];
+arr1.sort((a,b) => a - b);
+ function find(arr,value) {
+    let me = Math.floor(arr.length/2);
+    if(arr[me] === value) return arr[me]
+    else if(arr[me] < value && arr.length > 1) return find(arr.splice(me, arr.length -1), value)
+    else if(arr[me] > value && arr.length > 1) return find(arr.splice(0, me), value)
+    else return -1
+ }

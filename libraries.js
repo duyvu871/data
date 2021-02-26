@@ -143,3 +143,4 @@ const httpPost = (url, data, callback, err = console.error) => {
 // ); 
 
 //  Logs: {"userId": 1, "id": 1337, "title": "Foo", "body": "bar bar bar"}
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
